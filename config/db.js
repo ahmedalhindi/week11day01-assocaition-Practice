@@ -14,7 +14,7 @@ const db = mongoose.connection
 
 // connection error handling
 db.on('error', err => console.log(err))
-db.once('open', ()=> console.info('Mongoose connected to \"' + dbName +'\" database'+ '//', new Date()))
+db.once('open', ()=> console.info('Mongoose connected to \"' + dbName +'\" database'+ ' //', new Date()))
 
 // exporting our mongoDB connection to be used elsewhere
 module.exports = db

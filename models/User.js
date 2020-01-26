@@ -1,14 +1,14 @@
 const mongoose = require('mongoose')
 
 // embedded document schema comes first
-const TweetSchema = new Schema ({
+const TweetSchema = new mongoose.Schema ({
     tweetText: {
         type: String
     }
 },{timestamps: true})
 
 // the top schema which holds sub schema comes last
-const UserSchema = new Schema({
+const UserSchema = new mongoose.Schema({
     name:{
         type: String,
         default: 'Invalid User'

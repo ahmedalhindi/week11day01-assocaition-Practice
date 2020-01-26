@@ -5,8 +5,8 @@ const {UserModel, TweetModel} = require('../models/User')
 
 
 // define router paths
-router.get('/users', (req, res => {
+router.get('/users', (req, res) => {
     res.send(console.log(req.originalUrl))
-}))
+})
 
 module.exports = router

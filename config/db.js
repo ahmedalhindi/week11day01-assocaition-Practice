@@ -2,9 +2,10 @@
 const mongoose = require('mongoose')
 
 // connection string
-collection = "users"
-dbURI = "mongodb://localhost/" +collection
-mongoose.connect = (dbURI,
+const dbName = "users"
+dbURI = "mongodb://localhost/" + dbName
+
+mongoose.connect(dbURI,
     {useNewUrlParser: true, useUnifiedTopology: true,
     useFindAndModify:false, useCreateIndex: true})
 
@@ -13,7 +14,7 @@ const db = mongoose.connection
 
 // connection error handling
 db.on('error', err => console.log(err))
-db.once('open', ()=> console.info('Mongoose connected to ' + collection + '//', new Date()))
+db.once('open', ()=> console.info('Mongoose connected to \"' + dbName +'\" database'+ '//', new Date()))
 
 // exporting our mongoDB connection to be used elsewhere
 module.exports = db
